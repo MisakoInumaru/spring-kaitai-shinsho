@@ -1,4 +1,4 @@
-package com.example.kaitaishinsho.login.controller.domain.model;
+package com.example.kaitaishinsho.login.domain.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

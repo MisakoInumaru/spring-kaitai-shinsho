@@ -1,6 +1,6 @@
 package com.example.kaitaishinsho.login.controller;
 
-import com.example.kaitaishinsho.login.controller.domain.model.SignUpForm;
+import com.example.kaitaishinsho.login.domain.model.SignUpForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
