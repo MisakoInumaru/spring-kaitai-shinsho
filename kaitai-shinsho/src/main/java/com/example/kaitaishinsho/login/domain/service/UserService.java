@@ -5,6 +5,8 @@ import com.example.kaitaishinsho.login.domain.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -21,5 +23,13 @@ public class UserService {
 			result = true;
 		}
 		return result;
+	}
+
+	public int count() {
+		return dao.count();
+	}
+
+	public List<User> selectMany() {
+		return dao.selectMany();
 	}
 }
