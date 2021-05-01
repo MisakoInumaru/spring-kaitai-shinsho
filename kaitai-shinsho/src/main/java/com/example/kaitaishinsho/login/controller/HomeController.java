@@ -92,9 +92,24 @@ public class HomeController {
 		boolean result = userService.updateOne(user);
 
 		if (result == true) {
-			model.addAttribute("result", "success");
+			model.addAttribute("result", "success update");
 		} else {
-			model.addAttribute("result", "fail");
+			model.addAttribute("result", "fail update");
+		}
+
+		return getUserList(model);
+	}
+
+	@PostMapping(value = "/userDetail", params = "delete")
+	public String postUserDetailDelete(@ModelAttribute SignUpForm form, Model model) {
+		System.out.println("delete処理");
+
+		boolean result = userService.deleteOne(form.getUserId());
+
+		if (result == true) {
+			model.addAttribute("result", "success delete");
+		} else {
+			model.addAttribute("result", "fail delete");
 		}
 
 		return getUserList(model);
