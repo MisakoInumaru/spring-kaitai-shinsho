@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/webjars/**").permitAll()
 				.antMatchers("/css/**").permitAll()
+				.antMatchers("/rest/**").permitAll()
 				.antMatchers("/h2-console/**").permitAll()
 				.antMatchers("/login").permitAll()
 				.antMatchers("/signup").permitAll()
@@ -66,6 +67,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.logoutUrl("/logout")
 				.logoutSuccessUrl("/login");
+
+		RestMatcher csrfMatcher = new RestMatcher("/rest/**");
+
+		http.csrf().requireCsrfProtectionMatcher(csrfMatcher);
 	}
 
 	@Override
