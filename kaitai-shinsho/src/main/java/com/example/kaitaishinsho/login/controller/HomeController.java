@@ -77,6 +77,29 @@ public class HomeController {
 		return "login/homeLayout";
 	}
 
+	@PostMapping(value = "/userDetail", params = "update")
+	public String postUserDetailUpdate(@ModelAttribute SignUpForm form, Model model) {
+		System.out.println("update処理");
+
+		User user = new User();
+
+		user.setUserId(form.getUserId());
+		user.setUserName(form.getUserName());
+		user.setBirthday(form.getBirthday());
+		user.setAge(form.getAge());
+		user.setMarriage(form.isMarriage());
+
+		boolean result = userService.updateOne(user);
+
+		if (result == true) {
+			model.addAttribute("result", "success");
+		} else {
+			model.addAttribute("result", "fail");
+		}
+
+		return getUserList(model);
+	}
+
 	@PostMapping("/logout")
 	public String postLogout() {
 		return "redirect:/login";
