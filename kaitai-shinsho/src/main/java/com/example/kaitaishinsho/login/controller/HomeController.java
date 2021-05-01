@@ -124,4 +124,11 @@ public class HomeController {
 	public String getUserListCsv(Model model) {
 		return getUserList(model);
 	}
+
+	@GetMapping("/admin")
+	public String getAdmin(Model model) {
+		model.addAttribute("contents", "login/admin :: admin_contents");
+
+		return "login/homeLayout";
+	}
 }
