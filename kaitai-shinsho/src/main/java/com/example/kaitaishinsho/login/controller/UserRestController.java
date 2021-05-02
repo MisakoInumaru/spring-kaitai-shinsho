@@ -50,4 +50,18 @@ public class UserRestController {
 
 		return str;
 	}
+
+	@DeleteMapping("/rest/delete/{id:.+}")
+	public String deleteUserOne(@PathVariable("id") String userId) {
+		boolean result = service.deleteOne(userId);
+		String str = "";
+
+		if (result == true) {
+			str = "{\"result\":\"ok\"}";
+		} else {
+			str = "{\"result\":\"error\"}";
+		}
+
+		return str;
+	}
 }

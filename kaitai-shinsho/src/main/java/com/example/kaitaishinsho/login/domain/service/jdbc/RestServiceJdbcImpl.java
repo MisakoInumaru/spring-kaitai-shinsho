@@ -51,7 +51,14 @@ public class RestServiceJdbcImpl implements RestService {
 	}
 
 	@Override
-	public boolean delete(String userId) {
-		return false;
+	public boolean deleteOne(String userId) {
+
+		int result = dao.deleteOne(userId);
+
+		if (result == 0) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }

@@ -14,5 +14,5 @@ public interface RestService {
 
 	public boolean updateOne(User user);
 
-	public boolean delete(String userId);
+	public boolean deleteOne(String userId);
 }
