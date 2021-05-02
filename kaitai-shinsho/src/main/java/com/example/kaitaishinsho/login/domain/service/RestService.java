@@ -12,7 +12,7 @@ public interface RestService {
 
 	public List<User> selectMany();
 
-	public boolean update(User user);
+	public boolean updateOne(User user);
 
 	public boolean delete(String userId);
 }

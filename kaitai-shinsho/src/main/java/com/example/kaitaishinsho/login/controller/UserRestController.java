@@ -36,4 +36,18 @@ public class UserRestController {
 
 		return str;
 	}
+
+	@PutMapping("/rest/update")
+	public String putUserOne(@RequestBody User user) {
+		boolean result = service.updateOne(user);
+		String str = "";
+
+		if (result == true) {
+			str = "{\"result\":\"ok\"}";
+		} else {
+			str = "{\"result\":\"error\"}";
+		}
+
+		return str;
+	}
 }
