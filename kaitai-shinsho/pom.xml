@@ -18,6 +18,7 @@
 		<sonar.projectKey>MisakoInumaru_spring-kaitai-shinsho</sonar.projectKey>
 		<sonar.organization>inumaru</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 	<dependencies>
 		<dependency>
