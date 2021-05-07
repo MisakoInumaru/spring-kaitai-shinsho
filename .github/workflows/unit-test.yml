@@ -1,6 +1,10 @@
 name: unit-test
 on:
   push:
+  pull_request:
+    types:
+      - opend
+      - reopend
 
 jobs:
   build:
