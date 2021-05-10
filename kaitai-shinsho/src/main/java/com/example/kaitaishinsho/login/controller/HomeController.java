@@ -35,6 +35,7 @@ public class HomeController {
 	@GetMapping("/home")
 	public String getHome(Model model) {
 		model.addAttribute("contents", "login/home :: home_contents");
+		System.out.println("test");
 		return "login/homeLayout";
 	}
 
