@@ -2,10 +2,10 @@ name: unit-test
 on:
   push:
   pull_request:
-    types:
-      - opened
-      - reopened
   workflow_dispatch:
+
+concurrency:
+  unit-test
 
 jobs:
   build:
