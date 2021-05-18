@@ -1,9 +1,9 @@
 name: unit-test
 on:
   push:
-    branches:
-      - main
   pull_request:
+    branches:
+      - 'pr-test**'
   workflow_dispatch:
 
 jobs:
